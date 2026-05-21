@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма обратной связи</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <header class="card__header">
+        <h1>Обратная связь</h1>
+        <p>Заполните форму — мы ответим в течение 24 часов.</p>
+      </header>
+
+      <form id="feedback-form" class="form" novalidate>
+        <div class="form__group">
+          <label for="name">Имя</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Иван Иванов"
+            autocomplete="name"
+            required
+            minlength="2"
+          >
+          <span class="form__error" data-for="name"></span>
+        </div>
+
+        <div class="form__group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="ivan@example.com"
+            autocomplete="email"
+            required
+          >
+          <span class="form__error" data-for="email"></span>
+        </div>
+
+        <div class="form__group">
+          <label for="topic">Тема</label>
+          <select id="topic" name="topic" required>
+            <option value="" disabled selected>Выберите тему</option>
+            <option value="question">Вопрос</option>
+            <option value="bug">Сообщить об ошибке</option>
+            <option value="suggestion">Предложение</option>
+            <option value="other">Другое</option>
+          </select>
+          <span class="form__error" data-for="topic"></span>
+        </div>
+
+        <div class="form__group">
+          <label for="message">Сообщение</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Опишите ваш вопрос..."
+            required
+            minlength="10"
+          ></textarea>
+          <span class="form__error" data-for="message"></span>
+        </div>
+
+        <div class="form__group form__group--checkbox">
+          <label class="checkbox">
+            <input type="checkbox" id="agree" name="agree" required>
+            <span class="checkbox__box"></span>
+            <span>Согласен на обработку персональных данных</span>
+          </label>
+          <span class="form__error" data-for="agree"></span>
+        </div>
+
+        <button type="submit" class="btn">Отправить</button>
+      </form>
+
+      <div id="success" class="success" hidden>
+        <div class="success__icon">✓</div>
+        <h2>Спасибо!</h2>
+        <p id="success-text">Ваше сообщение отправлено.</p>
+        <button type="button" id="reset-btn" class="btn btn--secondary">Отправить ещё</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

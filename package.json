@@ -1,0 +1,13 @@
+{
+  "name": "lr11-feedback-form",
+  "private": true,
+  "scripts": {
+    "pretest": "node -e \"if(process.platform==='win32'&&!process.env.CI)require('edgedriver').download().then(p=>console.log('EdgeDriver:',p))\"",
+    "test": "mocha tests/**/*.test.js"
+  },
+  "devDependencies": {
+    "edgedriver": "^6.3.0",
+    "mocha": "^7.2.0",
+    "selenium-webdriver": "^4.27.0"
+  }
+}
