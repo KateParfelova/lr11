@@ -53,7 +53,7 @@ function validateForm() {
   for (const field of fields) {
     if (!validateField(field)) isValid = false;
   }
-  return isValid;
+  // return isValid;
 }
 
 form.addEventListener("submit", (e) => {
