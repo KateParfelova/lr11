@@ -54,6 +54,7 @@ function validateForm() {
     if (!validateField(field)) isValid = false;
   }
   return isValid;
+  //ghgy
 }
 
 form.addEventListener("submit", (e) => {
