@@ -51,7 +51,7 @@ function validateForm() {
   const fields = ["name", "email", "topic", "message", "agree"];
   let isValid = true;
   for (const field of fields) {
-    if (!validateField(field)) isValid = false;
+    if (!validateField(field)) isValid = false; //ERROR
   }
   return isValid;
 }
